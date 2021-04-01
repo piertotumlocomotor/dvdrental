@@ -2,8 +2,17 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://kedro.readthedocs.io/en/stable/05_data/01_data_catalog.html
+_sql: &sql
+    type: pandas.SQLQueryDataSet
+    credentials: dvdrental_db
+    
+
 actor_query:
-  type: pandas.SQLQueryDataSet
-  credentials: dvdrental_db
+  <<: *sql
   sql: select * from public.actor 
+  
+movie_abstracts_es:
+  <<: *sql
+  credentials: omdb_db
+  sql: select * from public.movie_abstracts_es
   
