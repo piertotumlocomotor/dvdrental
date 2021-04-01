@@ -5,5 +5,5 @@
 actor_query:
   type: pandas.SQLQueryDataSet
   credentials: dvdrental_db
-  #sql: select * from public.actor 
+  sql: select * from public.actor 
   
